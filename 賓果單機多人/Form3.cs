@@ -33,10 +33,11 @@ namespace 賓果單機多人
         {
             
         }
-        private class temp
+        public class temp
         {
             public static int leftbtn = 0;
             public static int id = 0;
+            public static bool playing = false;
         }
         private void makebtn()
         {
@@ -85,9 +86,10 @@ namespace 賓果單機多人
         private void button_Click(object sender, EventArgs e)
         {
             //((button)(sender)) = button陣列裡被按下的按鈕編號
-            main(Convert.ToInt32(((Button)(sender)).Name) + 1);
+            if (temp.playing == false) { input(Convert.ToInt32(((Button)sender).Name) + 1); }//填格子
+            if (temp.playing == true)  { play (Convert.ToInt32(((Button)sender).Name) + 1); }//開始遊戲
         }
-        private void main(int btn)//按鈕資料處理  按鈕從1開始
+        private void input(int btn)//按鈕資料處理  按鈕從1開始
         {
             int how_many_input = 0;
             temp.id = Convert.ToInt32(label2.Text);
@@ -105,7 +107,16 @@ namespace 賓果單機多人
                 if (how_many_input == 25) { Form2.data.whoReady[temp.id] = true ; }//如果輸入25筆資料(填入完成)，增加whoready人數
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        public void play(int btn)
+        {
+            
+            int btnNum = Convert.ToInt32(btnArray[btn].Text) - 1;
+            MessageBox.Show(btnNum.ToString());
+            Form2.data.fillblack[btnNum] = true;
+            btnArray[btnNum + 24].BackColor = Color.Black;
+            this.Visible = false;
+        }
+        private void button1_Click(object sender, EventArgs e)//auto fill
         {
             int how_many_input = 0;
             temp.id = Convert.ToInt32(label2.Text);
@@ -114,12 +125,13 @@ namespace 賓果單機多人
                 btnArray[i].Text = (i - 24).ToString();
                 btnArray[i - 25].Visible = false;
                 Form2.data.input[temp.id, i - 24] = i - 24;
+                btnArray[i].Enabled = false;
                 how_many_input++;
                 if (how_many_input >= 25) { Form2.data.whoReady[temp.id] = true; button2.Enabled = true; }
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)//完成
         {
             f2Close();
             temp.id = Convert.ToInt32(label2.Text) ;

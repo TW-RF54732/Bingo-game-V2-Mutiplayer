@@ -22,14 +22,14 @@ namespace 賓果單機多人
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            
         }
         public static class data
         {
             public static int player_amount = 0;//從1開始//遊玩人數
             public static int[,] input = new int[0,27];//[玩家, 該玩家資料(0:玩家id, 1:賓果數量)]//個玩家賓果表格存放資料容器
             public static bool[] whoReady = new bool[0];
-            public static int[] check = new int[25];//從0開始//紀錄被填黑的數字
+            public static bool[] fillblack = new bool[25];//從0開始//紀錄被填黑的數字
         }
         public Form2(int playerCount)//接收form1人數//主要程式
         {
@@ -45,10 +45,21 @@ namespace 賓果單機多人
                          //勿重複執行，且優先執行於info系列動作
             playerform_creat();//生成遊戲介面(隱形) + 輸入模式
                                //!!!內有宣告新增實體，勿重複執行，且優先執行於playerform系列動作
+            MessageBox.Show("填完格子後可以準備開始遊戲，由玩家1先選擇你要填黑的格子");
+            玩家介面.temp.playing = true;//告訴玩家介面遊戲開始
+            //for(int i = 0; i < 3; i++)
+            //{
+            //    display(i);
+            //}
 
 
             info_show();//呼叫顯示模組
         }
+        //private void display(int which)//0開始
+        //{
+        //    playerform[which].display();
+        //    playerform[which].ShowDialog();
+        //}
         private void playerform_creat()
         {
             playerform = new 玩家介面[data.player_amount];//生成等同玩家數量個的遊戲介面
@@ -61,13 +72,21 @@ namespace 賓果單機多人
                 playerform[i].f2Close();
                 if(i + 2 <= data.player_amount)MessageBox.Show($"輪到玩家{i + 2}\n 關閉此通知打開下一個遊戲視窗");
             }
-            for (int i = 0; i < data.player_amount; i++)
+            bool allReady = false;
+            while(allReady == false)
             {
-                if (data.whoReady[i] == false)
+                allReady = true;
+                for (int i = 0; i < data.player_amount; i++)
                 {
-                    playerform[i].Visible = true;
+                    if (data.whoReady[i] == false)
+                    {
+                        MessageBox.Show($"玩家{i+1}尚未完成填滿空格\n請完成表格以繼續遊戲");
+                        playerform[i].ShowDialog();
+                        allReady = false;
+                    }
                 }
             }
+
 
         }//介面生成
         public void info_creat()//控制form2資料庫顯示
