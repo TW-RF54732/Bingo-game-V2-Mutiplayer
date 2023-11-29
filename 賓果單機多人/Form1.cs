@@ -36,8 +36,8 @@ namespace 賓果單機多人
                 else
                 {
                     int player = Convert.ToInt32(textBox1.Text);
-                    Form2 f2 = new Form2(player);
                     this.Visible = false;//隱藏視窗
+                    Form2 f2 = new Form2(player);
                     f2.Show();
                 }
                 
