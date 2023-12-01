@@ -28,7 +28,7 @@ namespace 賓果單機多人
         {
             try
             {
-                if (textBox1.Text == "0"||textBox1.Text == "1")
+                if (Convert.ToInt32(textBox1.Text) < 2)
                 {
                     MessageBox.Show("請輸入正確人數(>1)");
                     textBox1.Text = "輸入遊玩人數";
