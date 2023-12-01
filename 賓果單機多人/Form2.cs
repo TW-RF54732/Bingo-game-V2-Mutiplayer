@@ -47,19 +47,26 @@ namespace 賓果單機多人
                                //!!!內有宣告新增實體，勿重複執行，且優先執行於playerform系列動作
             MessageBox.Show("填完格子後可以準備開始遊戲，由玩家1先選擇你要填黑的格子");
             玩家介面.temp.playing = true;//告訴玩家介面遊戲開始
-            //for(int i = 0; i < 3; i++)
-            //{
-            //    display(i);
-            //}
+            startPlay();
 
 
             info_show();//呼叫顯示模組
         }
-        //private void display(int which)//0開始
-        //{
-        //    playerform[which].display();
-        //    playerform[which].ShowDialog();
-        //}
+        private void startPlay()
+        {
+            int j = 0;
+            while(j < 25)
+            {
+                for (int i = 0; i < data.player_amount; i++)
+                {
+
+                    playerform[i].display();
+                    playerform[i].ShowDialog();
+                }
+                j++;
+            }
+        }
+        
         private void playerform_creat()
         {
             playerform = new 玩家介面[data.player_amount];//生成等同玩家數量個的遊戲介面
