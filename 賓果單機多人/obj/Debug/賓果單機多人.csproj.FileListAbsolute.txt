@@ -10,3 +10,15 @@ C:\Users\USER\source\repos\賓果單機多人\賓果單機多人\obj\Debug\賓�
 C:\Users\USER\source\repos\賓果單機多人\賓果單機多人\obj\Debug\賓果單機多人.pdb
 C:\Users\USER\source\repos\賓果單機多人\賓果單機多人\obj\Debug\賓果單機多人.Form2.resources
 C:\Users\USER\source\repos\賓果單機多人\賓果單機多人\obj\Debug\賓果單機多人.玩家介面.resources
+C:\Users\leo17\source\repos\Bingo-game-V2-Mutiplayer\賓果單機多人\bin\Debug\賓果單機多人.exe.config
+C:\Users\leo17\source\repos\Bingo-game-V2-Mutiplayer\賓果單機多人\bin\Debug\賓果單機多人.exe
+C:\Users\leo17\source\repos\Bingo-game-V2-Mutiplayer\賓果單機多人\bin\Debug\賓果單機多人.pdb
+C:\Users\leo17\source\repos\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.csproj.AssemblyReference.cache
+C:\Users\leo17\source\repos\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.Form1.resources
+C:\Users\leo17\source\repos\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.Form2.resources
+C:\Users\leo17\source\repos\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.玩家介面.resources
+C:\Users\leo17\source\repos\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.Properties.Resources.resources
+C:\Users\leo17\source\repos\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.csproj.GenerateResource.cache
+C:\Users\leo17\source\repos\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.csproj.CoreCompileInputs.cache
+C:\Users\leo17\source\repos\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.exe
+C:\Users\leo17\source\repos\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.pdb

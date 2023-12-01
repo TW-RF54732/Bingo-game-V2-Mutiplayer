@@ -83,7 +83,7 @@ namespace 賓果單機多人
             }
 
         }
-        private void button_Click(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e)//0-49號按鈕被案下
         {
             //((button)(sender)) = button陣列裡被按下的按鈕編號
             if (temp.playing == false) { input(Convert.ToInt32(((Button)sender).Name) + 1); }//填格子
@@ -111,10 +111,26 @@ namespace 賓果單機多人
         {
             
             int btnNum = Convert.ToInt32(btnArray[btn].Text) - 1;
-            MessageBox.Show(btnNum.ToString());
+            MessageBox.Show("你選擇填黑數字"+btnNum.ToString());
             Form2.data.fillblack[btnNum] = true;
             btnArray[btnNum + 24].BackColor = Color.Black;
             this.Visible = false;
+        }
+        public void display()
+        {
+            for(int k = 25;k<50;k++)
+            {
+                btnArray[k].Enabled = true;
+            }
+            for(int i = 0;i < 25;i++)
+            {
+                int j = 25;
+                while (j <= 49){
+                    if (Convert.ToInt32(btnArray[j].Text) == i) { break; }
+                    j++;
+                }
+                if (Form2.data.fillblack[i] == true) { btnArray[j].BackColor = Color.Black; }
+            }
         }
         private void button1_Click(object sender, EventArgs e)//auto fill
         {
