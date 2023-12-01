@@ -29,7 +29,7 @@ namespace 賓果單機多人
             public static int player_amount = 0;//從1開始//遊玩人數
             public static int[,] input = new int[0,27];//[玩家, 該玩家資料(0:玩家id, 1:賓果數量)]//個玩家賓果表格存放資料容器
             public static bool[] whoReady = new bool[0];
-            public static bool[] fillblack = new bool[25];//從0開始//紀錄被填黑的數字
+            public static bool[] fillblack = new bool[26];//從0開始//紀錄被填黑的數字
         }
         public Form2(int playerCount)//接收form1人數//主要程式
         {

@@ -104,10 +104,10 @@ namespace 賓果單機多人
         public void play(int btn)
         {
             Console.WriteLine(btn.ToString());
-            int btnNum = Convert.ToInt32(btnArray[btn].Text) - 1;
-            MessageBox.Show("你選擇填黑數字"+btnNum.ToString());
-            Form2.data.fillblack[btnNum] = true;
-            btnArray[btnNum + 24].BackColor = Color.Black;
+            MessageBox.Show("你選擇填黑數字" + btnArray[btn - 1].Text);
+            Form2.data.fillblack[Convert.ToInt32(btnArray[btn - 25].Text)] = true;
+            btnArray[btn - 1].BackColor = Color.Black;
+            
             Bingo_detect();
             this.Visible = false;
         }
