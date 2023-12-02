@@ -34,3 +34,15 @@ C:\Users\USER\source\repos\賓果單機多人\Bingo-game-V2-Mutiplayer\賓果單
 C:\Users\USER\source\repos\賓果單機多人\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.csproj.CoreCompileInputs.cache
 C:\Users\USER\source\repos\賓果單機多人\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.exe
 C:\Users\USER\source\repos\賓果單機多人\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.pdb
+D:\Github\Bingo\Bingo-game-V2-Mutiplayer\賓果單機多人\bin\Debug\賓果單機多人.exe.config
+D:\Github\Bingo\Bingo-game-V2-Mutiplayer\賓果單機多人\bin\Debug\賓果單機多人.exe
+D:\Github\Bingo\Bingo-game-V2-Mutiplayer\賓果單機多人\bin\Debug\賓果單機多人.pdb
+D:\Github\Bingo\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.csproj.AssemblyReference.cache
+D:\Github\Bingo\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.Form1.resources
+D:\Github\Bingo\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.Form2.resources
+D:\Github\Bingo\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.玩家介面.resources
+D:\Github\Bingo\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.Properties.Resources.resources
+D:\Github\Bingo\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.csproj.GenerateResource.cache
+D:\Github\Bingo\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.csproj.CoreCompileInputs.cache
+D:\Github\Bingo\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.exe
+D:\Github\Bingo\Bingo-game-V2-Mutiplayer\賓果單機多人\obj\Debug\賓果單機多人.pdb
