@@ -25,7 +25,7 @@ namespace 賓果單機多人
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            
+
         }
         public class temp
         {
@@ -37,7 +37,7 @@ namespace 賓果單機多人
         private void makebtn()
         {
             int i = 0;
-            for(int y = 0; y < 5; y++)
+            for (int y = 0; y < 5; y++)
             {
                 for (int x = 0; x < 5; x++)
                 {
@@ -67,7 +67,7 @@ namespace 賓果單機多人
                     this.Controls.Add(btnArray[i]);
                     btnArray[i].Click += new EventHandler(button_Click);
                     i++;
-                    
+
                 }
             }
 
@@ -76,12 +76,12 @@ namespace 賓果單機多人
         {
             //((button)(sender)) = button陣列裡被按下的按鈕編號
             if (temp.playing == false) { input(Convert.ToInt32(((Button)sender).Name) + 1); }//填格子
-            if (temp.playing == true)  { play (Convert.ToInt32(((Button)sender).Name) + 1); }//開始遊戲
+            if (temp.playing == true) { play(Convert.ToInt32(((Button)sender).Name) + 1); }//開始遊戲
         }
         int how_many_input = 0;
         private void input(int btn)//按鈕資料處理  按鈕從1開始
         {
-            
+
             temp.id = Convert.ToInt32(label2.Text);
             if (btn < 26) { temp.leftbtn = btn; }//leftbtn 從1開始
             if (temp.leftbtn == 0) { label1.Text = "選取:無"; }
@@ -103,7 +103,7 @@ namespace 賓果單機多人
             MessageBox.Show("你選擇填黑數字" + btnArray[btn - 1].Text);
             Form2.data.fillblack[Convert.ToInt32(btnArray[btn - 1].Text)] = true;
             btnArray[btn - 1].BackColor = Color.Black;
-            
+
             Bingo_detect();
             this.Visible = false;
         }
@@ -112,20 +112,21 @@ namespace 賓果單機多人
             button1.Visible = false;
             button2.Visible = false;
             button3.Visible = false;
-            for (int k = 25;k<50;k++)
-            { 
+            for (int k = 25; k < 50; k++)
+            {
                 btnArray[k].Enabled = true;
             }
-            for(int i = 0;i < 26;i++)
+            for (int i = 0; i < 26; i++)
             {
                 int j = 25;
-                while (j <= 49){
+                while (j <= 49)
+                {
                     if (Convert.ToInt32(btnArray[j].Text) == i) { break; }
                     j++;
                 }
                 if (Form2.data.fillblack[i] == true) { btnArray[j].BackColor = Color.Black; }
             }
-            Bingo_detect() ;
+            Bingo_detect();
         }
         public void Bingo_detect()
         {
@@ -152,7 +153,7 @@ namespace 賓果單機多人
         {
             int how_many_input = 0;
             temp.id = Convert.ToInt32(label2.Text);
-            for (int i = 25;i<50;i++)
+            for (int i = 25; i < 50; i++)
             {
                 btnArray[i].Text = (i - 24).ToString();
                 btnArray[i - 25].Visible = false;
@@ -165,10 +166,9 @@ namespace 賓果單機多人
 
         private void button2_Click(object sender, EventArgs e)//完成
         {
-            temp.id = Convert.ToInt32(label2.Text) ;
+            temp.id = Convert.ToInt32(label2.Text);
             this.Visible = false;
         }
-<<<<<<< HEAD
         private void button3_Click(object sender, EventArgs e)//隨機排序
         {
             Random rnd = new Random();  //產生亂數初始值
@@ -176,11 +176,17 @@ namespace 賓果單機多人
             for (int i = 0; i < 25; i++)
             {
                 random_input[i] = rnd.Next(1, 26);   //亂數產生，亂數產生的範圍是1~25
-=======
+            }
+        }
 
-        private void button3_Click(object sender, EventArgs e)
+
+        private void button3_Click_1(object sender, EventArgs e)
         {
->>>>>>> 18d4c530bf818db6cb0e4f24e862f68f9dd3ff20
+            Random rnd = new Random();  //產生亂數初始值
+            int[] random_input = new int[25];
+            for (int i = 0; i < 25; i++)
+            {
+                random_input[i] = rnd.Next(1, 26);   //亂數產生，亂數產生的範圍是1~25
 
                 for (int j = 0; j < i; j++)
                 {
@@ -205,3 +211,8 @@ namespace 賓果單機多人
         }
     }
 }
+
+
+
+
+
