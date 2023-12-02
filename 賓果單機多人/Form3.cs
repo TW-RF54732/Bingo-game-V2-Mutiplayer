@@ -101,11 +101,10 @@ namespace 賓果單機多人
                 if (how_many_input >= 25) { Form2.data.whoReady[temp.id] = true; button2.Enabled = true; }//如果輸入25筆資料(填入完成)，增加whoready人數
             }
         }
-        public void play(int btn)
+        public void play(int btn)//btn從26開始
         {
-            Console.WriteLine(btn.ToString());
             MessageBox.Show("你選擇填黑數字" + btnArray[btn - 1].Text);
-            Form2.data.fillblack[Convert.ToInt32(btnArray[btn - 25].Text)] = true;
+            Form2.data.fillblack[Convert.ToInt32(btnArray[btn - 27].Text)] = true;
             btnArray[btn - 1].BackColor = Color.Black;
             
             Bingo_detect();
@@ -124,8 +123,9 @@ namespace 賓果單機多人
                     if (Convert.ToInt32(btnArray[j].Text) == i) { break; }
                     j++;
                 }
-                if (Form2.data.fillblack[i] == true) { btnArray[j].BackColor = Color.Black; }
+                if (Form2.data.fillblack[i] == true) { btnArray[j + 1].BackColor = Color.Black; }
             }
+            Bingo_detect() ;
         }
         public void Bingo_detect()
         {
@@ -146,7 +146,7 @@ namespace 賓果單機多人
             if (btnArray[25].BackColor == Color.Black && btnArray[31].BackColor == Color.Black && btnArray[37].BackColor == Color.Black && btnArray[43].BackColor == Color.Black && btnArray[49].BackColor == Color.Black) { line++; }
             if (btnArray[29].BackColor == Color.Black && btnArray[33].BackColor == Color.Black && btnArray[37].BackColor == Color.Black && btnArray[41].BackColor == Color.Black && btnArray[45].BackColor == Color.Black) { line++; }
             temp.bingo_line = line;
-            label3.Text = line.ToString();
+            label3.Text = "賓果:" + line.ToString();
         }
         private void button1_Click(object sender, EventArgs e)//auto fill
         {

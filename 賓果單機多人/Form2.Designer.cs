@@ -39,6 +39,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -99,7 +100,7 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 24;
-            this.listBox1.Location = new System.Drawing.Point(56, 251);
+            this.listBox1.Location = new System.Drawing.Point(56, 254);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(923, 172);
             this.listBox1.TabIndex = 7;
@@ -135,17 +136,27 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(52, 179);
+            this.label9.Location = new System.Drawing.Point(61, 179);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 24);
+            this.label9.Size = new System.Drawing.Size(34, 72);
             this.label9.TabIndex = 15;
-            this.label9.Text = "ID";
+            this.label9.Text = "ID\r\n |\r\nV\r\n";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(58, 429);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 24);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "填黑:";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1002, 615);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button2);
@@ -178,5 +189,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -152,7 +152,7 @@ namespace 賓果單機多人
             {
                 labelArray[i].ForeColor = data.whoReady[i] == true ? Color.LimeGreen : Color.Red;
 
-            }//同上
+            }//label資料更新
             listBox1.Items.Clear();
             for (int i = 0; i < data.player_amount; i++)//第i行
             {
@@ -170,9 +170,14 @@ namespace 賓果單機多人
             for (int i = 0; i < data.player_amount; i++)
             {
                 if (data.whoReady[i] == true) { how_maney_ready++; }
-            }
+            }//完成填數字
             label8.Text = "數字填充完成人數:" + how_maney_ready;
-
+            label11.Text = "填黑:";
+            for (int i = 0;i < 25; i++)
+            {
+                
+                if (data.fillblack[i] == true) { label11.Text += (i + 1).ToString() + ","; }
+            }
         }
 
         private void myResize1(ref int[,] changeArray, int rank0, int rank1)
