@@ -169,10 +169,34 @@ namespace 賓果單機多人
             temp.id = Convert.ToInt32(label2.Text) ;
             this.Visible = false;
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)//隨機排序
         {
-            Random random = new Random();
+            Random rnd = new Random();  //產生亂數初始值
+            int[] random_input = new int[25];
+            for (int i = 0; i < 25; i++)
+            {
+                random_input[i] = rnd.Next(1, 26);   //亂數產生，亂數產生的範圍是1~25
 
+                for (int j = 0; j < i; j++)
+                {
+                    while (random_input[j] == random_input[i])    //檢查是否與前面產生的數值發生重複，如果有就重新產生
+                    {
+                        j = 0;  //如有重複，將變數j設為0，再次檢查 (因為還是有重複的可能)
+                        random_input[i] = rnd.Next(1, 26);   //重新產生，存回陣列，亂數產生的範圍是1~25
+                    }
+                }
+            }//產生隨機不復1-25的數字
+            int how_many_input = 0;
+            temp.id = Convert.ToInt32(label2.Text);
+            for (int i = 0; i < 25; i++)
+            {
+                btnArray[i + 25].Text = random_input[i].ToString();
+                btnArray[i].Visible = false;
+                Form2.data.input[temp.id, i + 1] = random_input[i];
+                btnArray[i + 25].Enabled = false;
+                how_many_input++;
+                if (how_many_input >= 25) { Form2.data.whoReady[temp.id] = true; button2.Enabled = true; }
+            }
         }
     }
 }
