@@ -132,7 +132,7 @@ namespace 賓果單機多人
             int line = 0;
             //橫向上到下
             if (btnArray[25].BackColor == Color.Black && btnArray[26].BackColor == Color.Black && btnArray[27].BackColor == Color.Black && btnArray[28].BackColor == Color.Black && btnArray[29].BackColor == Color.Black) { line++; }
-            if (btnArray[30].BackColor == Color.Black && btnArray[31].BackColor == Color.Black && btnArray[32].BackColor == Color.Black && btnArray[33].BackColor == Color.Black && btnArray[24].BackColor == Color.Black) { line++; }
+            if (btnArray[30].BackColor == Color.Black && btnArray[31].BackColor == Color.Black && btnArray[32].BackColor == Color.Black && btnArray[33].BackColor == Color.Black && btnArray[34].BackColor == Color.Black) { line++; }
             if (btnArray[35].BackColor == Color.Black && btnArray[36].BackColor == Color.Black && btnArray[37].BackColor == Color.Black && btnArray[38].BackColor == Color.Black && btnArray[39].BackColor == Color.Black) { line++; }
             if (btnArray[40].BackColor == Color.Black && btnArray[41].BackColor == Color.Black && btnArray[42].BackColor == Color.Black && btnArray[43].BackColor == Color.Black && btnArray[44].BackColor == Color.Black) { line++; }
             if (btnArray[45].BackColor == Color.Black && btnArray[46].BackColor == Color.Black && btnArray[47].BackColor == Color.Black && btnArray[48].BackColor == Color.Black && btnArray[49].BackColor == Color.Black) { line++; }
