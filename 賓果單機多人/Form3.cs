@@ -14,7 +14,6 @@ namespace 賓果單機多人
     public partial class 玩家介面 : Form
     {
         private Button[] btnArray = new Button[50];
-        private Form2 f2 = new Form2();
         public 玩家介面(int id)
         {
             InitializeComponent();
@@ -23,10 +22,7 @@ namespace 賓果單機多人
             label2.Visible = false;
 
         }
-        public void f2Close()
-        {
-            f2.Visible = false;
-        }
+
         private void Form3_Load(object sender, EventArgs e)
         {
             
@@ -113,7 +109,9 @@ namespace 賓果單機多人
         }
         public void display()
         {
+            button1.Visible = false;
             button2.Visible = false;
+            button3.Visible = false;
             for (int k = 25;k<50;k++)
             { 
                 btnArray[k].Enabled = true;
@@ -167,7 +165,6 @@ namespace 賓果單機多人
 
         private void button2_Click(object sender, EventArgs e)//完成
         {
-            f2Close();
             temp.id = Convert.ToInt32(label2.Text) ;
             this.Visible = false;
         }

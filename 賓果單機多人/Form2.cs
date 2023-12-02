@@ -84,7 +84,6 @@ namespace 賓果單機多人
                 playerform[i].Text = $"玩家 {i + 1}"; // 設定每個 Form 的標題
                 info_show();
                 playerform[i].ShowDialog();
-                playerform[i].f2Close();
                 if(i + 2 <= data.player_amount)MessageBox.Show($"輪到玩家{i + 2}\n 關閉此通知打開下一個遊戲視窗");
             }
             bool allReady = false;
