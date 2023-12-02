@@ -104,7 +104,7 @@ namespace 賓果單機多人
         public void play(int btn)//btn從26開始
         {
             MessageBox.Show("你選擇填黑數字" + btnArray[btn - 1].Text);
-            Form2.data.fillblack[Convert.ToInt32(btnArray[btn - 27].Text)] = true;
+            Form2.data.fillblack[Convert.ToInt32(btnArray[btn - 1].Text)] = true;
             btnArray[btn - 1].BackColor = Color.Black;
             
             Bingo_detect();
@@ -116,14 +116,14 @@ namespace 賓果單機多人
             {
                 btnArray[k].Enabled = true;
             }
-            for(int i = 0;i < 25;i++)
+            for(int i = 0;i < 26;i++)
             {
                 int j = 25;
                 while (j <= 49){
                     if (Convert.ToInt32(btnArray[j].Text) == i) { break; }
                     j++;
                 }
-                if (Form2.data.fillblack[i] == true) { btnArray[j + 1].BackColor = Color.Black; }
+                if (Form2.data.fillblack[i] == true) { btnArray[j].BackColor = Color.Black; }
             }
             Bingo_detect() ;
         }
@@ -132,10 +132,10 @@ namespace 賓果單機多人
             int line = 0;
             //橫向上到下
             if (btnArray[25].BackColor == Color.Black && btnArray[26].BackColor == Color.Black && btnArray[27].BackColor == Color.Black && btnArray[28].BackColor == Color.Black && btnArray[29].BackColor == Color.Black) { line++; }
-            if (btnArray[30].BackColor == Color.Black && btnArray[31].BackColor == Color.Black && btnArray[32].BackColor == Color.Black && btnArray[28].BackColor == Color.Black && btnArray[29].BackColor == Color.Black) { line++; }
-            if (btnArray[35].BackColor == Color.Black && btnArray[36].BackColor == Color.Black && btnArray[37].BackColor == Color.Black && btnArray[28].BackColor == Color.Black && btnArray[29].BackColor == Color.Black) { line++; }
-            if (btnArray[40].BackColor == Color.Black && btnArray[41].BackColor == Color.Black && btnArray[42].BackColor == Color.Black && btnArray[28].BackColor == Color.Black && btnArray[29].BackColor == Color.Black) { line++; }
-            if (btnArray[45].BackColor == Color.Black && btnArray[46].BackColor == Color.Black && btnArray[47].BackColor == Color.Black && btnArray[28].BackColor == Color.Black && btnArray[29].BackColor == Color.Black) { line++; }
+            if (btnArray[30].BackColor == Color.Black && btnArray[31].BackColor == Color.Black && btnArray[32].BackColor == Color.Black && btnArray[33].BackColor == Color.Black && btnArray[24].BackColor == Color.Black) { line++; }
+            if (btnArray[35].BackColor == Color.Black && btnArray[36].BackColor == Color.Black && btnArray[37].BackColor == Color.Black && btnArray[38].BackColor == Color.Black && btnArray[39].BackColor == Color.Black) { line++; }
+            if (btnArray[40].BackColor == Color.Black && btnArray[41].BackColor == Color.Black && btnArray[42].BackColor == Color.Black && btnArray[43].BackColor == Color.Black && btnArray[44].BackColor == Color.Black) { line++; }
+            if (btnArray[45].BackColor == Color.Black && btnArray[46].BackColor == Color.Black && btnArray[47].BackColor == Color.Black && btnArray[48].BackColor == Color.Black && btnArray[49].BackColor == Color.Black) { line++; }
             //豎向左到右
             if (btnArray[25].BackColor == Color.Black && btnArray[30].BackColor == Color.Black && btnArray[35].BackColor == Color.Black && btnArray[40].BackColor == Color.Black && btnArray[45].BackColor == Color.Black) { line++; }
             if (btnArray[26].BackColor == Color.Black && btnArray[31].BackColor == Color.Black && btnArray[36].BackColor == Color.Black && btnArray[41].BackColor == Color.Black && btnArray[46].BackColor == Color.Black) { line++; }

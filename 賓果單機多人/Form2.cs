@@ -68,6 +68,7 @@ namespace 賓果單機多人
                     {
                         win = true;
                         MessageBox.Show($"玩家{i + 1}贏了這場遊戲");
+                        break;
                     }
                 }
                 j++;
@@ -173,10 +174,9 @@ namespace 賓果單機多人
             }//完成填數字
             label8.Text = "數字填充完成人數:" + how_maney_ready;
             label11.Text = "填黑:";
-            for (int i = 0;i < 25; i++)
-            {
-                
-                if (data.fillblack[i] == true) { label11.Text += (i + 1).ToString() + ","; }
+            for (int i = 0;i < 26; i++)
+            {                
+                if (data.fillblack[i] == true) { label11.Text += (i).ToString() + ","; }
             }
         }
 
