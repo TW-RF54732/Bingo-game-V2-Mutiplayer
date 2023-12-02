@@ -14,7 +14,6 @@ namespace 賓果單機多人
     public partial class 玩家介面 : Form
     {
         private Button[] btnArray = new Button[50];
-        private Form2 f2 = new Form2();
         public 玩家介面(int id)
         {
             InitializeComponent();
@@ -23,10 +22,7 @@ namespace 賓果單機多人
             label2.Visible = false;
 
         }
-        public void f2Close()
-        {
-            f2.Visible = false;
-        }
+
         private void Form3_Load(object sender, EventArgs e)
         {
             
@@ -103,6 +99,7 @@ namespace 賓果單機多人
         }
         public void play(int btn)//btn從26開始
         {
+            this.Visible = false;
             MessageBox.Show("你選擇填黑數字" + btnArray[btn - 1].Text);
             Form2.data.fillblack[Convert.ToInt32(btnArray[btn - 1].Text)] = true;
             btnArray[btn - 1].BackColor = Color.Black;
@@ -112,8 +109,11 @@ namespace 賓果單機多人
         }
         public void display()
         {
-            for(int k = 25;k<50;k++)
-            {
+            button1.Visible = false;
+            button2.Visible = false;
+            button3.Visible = false;
+            for (int k = 25;k<50;k++)
+            { 
                 btnArray[k].Enabled = true;
             }
             for(int i = 0;i < 26;i++)
@@ -132,7 +132,7 @@ namespace 賓果單機多人
             int line = 0;
             //橫向上到下
             if (btnArray[25].BackColor == Color.Black && btnArray[26].BackColor == Color.Black && btnArray[27].BackColor == Color.Black && btnArray[28].BackColor == Color.Black && btnArray[29].BackColor == Color.Black) { line++; }
-            if (btnArray[30].BackColor == Color.Black && btnArray[31].BackColor == Color.Black && btnArray[32].BackColor == Color.Black && btnArray[33].BackColor == Color.Black && btnArray[24].BackColor == Color.Black) { line++; }
+            if (btnArray[30].BackColor == Color.Black && btnArray[31].BackColor == Color.Black && btnArray[32].BackColor == Color.Black && btnArray[33].BackColor == Color.Black && btnArray[34].BackColor == Color.Black) { line++; }
             if (btnArray[35].BackColor == Color.Black && btnArray[36].BackColor == Color.Black && btnArray[37].BackColor == Color.Black && btnArray[38].BackColor == Color.Black && btnArray[39].BackColor == Color.Black) { line++; }
             if (btnArray[40].BackColor == Color.Black && btnArray[41].BackColor == Color.Black && btnArray[42].BackColor == Color.Black && btnArray[43].BackColor == Color.Black && btnArray[44].BackColor == Color.Black) { line++; }
             if (btnArray[45].BackColor == Color.Black && btnArray[46].BackColor == Color.Black && btnArray[47].BackColor == Color.Black && btnArray[48].BackColor == Color.Black && btnArray[49].BackColor == Color.Black) { line++; }
@@ -165,10 +165,10 @@ namespace 賓果單機多人
 
         private void button2_Click(object sender, EventArgs e)//完成
         {
-            f2Close();
             temp.id = Convert.ToInt32(label2.Text) ;
             this.Visible = false;
         }
+<<<<<<< HEAD
         private void button3_Click(object sender, EventArgs e)//隨機排序
         {
             Random rnd = new Random();  //產生亂數初始值
@@ -176,6 +176,11 @@ namespace 賓果單機多人
             for (int i = 0; i < 25; i++)
             {
                 random_input[i] = rnd.Next(1, 26);   //亂數產生，亂數產生的範圍是1~25
+=======
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+>>>>>>> 18d4c530bf818db6cb0e4f24e862f68f9dd3ff20
 
                 for (int j = 0; j < i; j++)
                 {
