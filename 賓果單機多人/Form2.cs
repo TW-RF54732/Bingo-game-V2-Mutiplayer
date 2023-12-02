@@ -64,7 +64,7 @@ namespace 賓果單機多人
                     info_show();
                     playerform[i].display();
                     playerform[i].ShowDialog();
-                    if (玩家介面.temp.bingo_line == 3)
+                    if (玩家介面.temp.bingo_line >= 3)
                     {
                         win = true;
                         MessageBox.Show($"玩家{i + 1}贏了這場遊戲");
