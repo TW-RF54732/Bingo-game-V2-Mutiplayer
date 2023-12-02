@@ -169,6 +169,10 @@ namespace 賓果單機多人
             temp.id = Convert.ToInt32(label2.Text) ;
             this.Visible = false;
         }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
 
+        }
     }
 }
