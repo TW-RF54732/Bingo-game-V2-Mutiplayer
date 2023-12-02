@@ -22,7 +22,7 @@ namespace 賓果單機多人
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            
+            this.Visible = false;
         }
         public static class data
         {
@@ -60,7 +60,6 @@ namespace 賓果單機多人
             {
                 for (int i = 0; i < data.player_amount; i++)
                 {
-                    this.Show();
                     info_show();
                     playerform[i].display();
                     playerform[i].ShowDialog();
@@ -83,7 +82,6 @@ namespace 賓果單機多人
                 data.input[i, 0] = i + 1;//陣列的編號
                 playerform[i] = new 玩家介面(i);
                 playerform[i].Text = $"玩家 {i + 1}"; // 設定每個 Form 的標題
-                this.Show();
                 info_show();
                 playerform[i].ShowDialog();
                 playerform[i].f2Close();

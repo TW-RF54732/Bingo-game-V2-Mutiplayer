@@ -103,6 +103,7 @@ namespace 賓果單機多人
         }
         public void play(int btn)//btn從26開始
         {
+            this.Visible = false;
             MessageBox.Show("你選擇填黑數字" + btnArray[btn - 1].Text);
             Form2.data.fillblack[Convert.ToInt32(btnArray[btn - 1].Text)] = true;
             btnArray[btn - 1].BackColor = Color.Black;
@@ -112,8 +113,9 @@ namespace 賓果單機多人
         }
         public void display()
         {
-            for(int k = 25;k<50;k++)
-            {
+            button2.Visible = false;
+            for (int k = 25;k<50;k++)
+            { 
                 btnArray[k].Enabled = true;
             }
             for(int i = 0;i < 26;i++)
@@ -170,5 +172,9 @@ namespace 賓果單機多人
             this.Visible = false;
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
