@@ -22,7 +22,7 @@ namespace 賓果單機多人
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            this.Visible = false;
+            
         }
         public static class data
         {
@@ -38,7 +38,6 @@ namespace 賓果單機多人
              更直觀的了解整個流程不需被內部瑣碎程式干擾
              */
             InitializeComponent();
-            this.Show();
             data.player_amount = playerCount;//儲存form1人數到class的data 
             myResize1(ref data.input, data.player_amount, 26);//二維陣列高度=玩家數量，寬度=26(25個數字+1玩家號碼)
             Array.Resize(ref data.whoReady, data.player_amount);
