@@ -38,6 +38,7 @@ namespace 賓果單機多人
              更直觀的了解整個流程不需被內部瑣碎程式干擾
              */
             InitializeComponent();
+            this.Show();
             data.player_amount = playerCount;//儲存form1人數到class的data 
             myResize1(ref data.input, data.player_amount, 26);//二維陣列高度=玩家數量，寬度=26(25個數字+1玩家號碼)
             Array.Resize(ref data.whoReady, data.player_amount);
@@ -174,6 +175,26 @@ namespace 賓果單機多人
             for (int i = 0;i < 26; i++)
             {                
                 if (data.fillblack[i] == true) { label11.Text += (i).ToString() + ","; }
+            }
+            Button[] btnArray = new Button[25];
+            int k = 0;
+            for (int y = 0; y < 5; y++)
+            {
+                for (int x = 0; x < 5; x++)
+                {
+                    btnArray[k] = new Button();
+                    btnArray[k].Name = $"{k}";
+                    btnArray[k].Size = new Size(40, 40);
+                    btnArray[k].Font = new Font("微軟正黑體", 12, FontStyle.Regular);
+                    btnArray[k].Location = new Point(300 + x * 40, 50 + y * 40);
+                    btnArray[k].Visible = true;
+                    for (int i = 0; i < 25; i++)
+                    {
+                        btnArray[k].Text = $"{data.input[listBox1.SelectedIndex,i]}";
+                    }
+                    this.Controls.Add(btnArray[k]);
+                    k++;
+                }
             }
         }
 
