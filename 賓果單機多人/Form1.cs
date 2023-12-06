@@ -44,9 +44,8 @@ namespace 賓果單機多人
             }
             catch
             {
-                MessageBox.Show("請輸入正確人數(>1)");
+                MessageBox.Show("有問題");
                 textBox1.Text = "輸入遊玩人數";
-
             }
         }
     }

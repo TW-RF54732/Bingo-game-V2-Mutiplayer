@@ -176,6 +176,23 @@ namespace 賓果單機多人
             {                
                 if (data.fillblack[i] == true) { label11.Text += (i).ToString() + ","; }
             }
+        }
+
+        private void myResize1(ref int[,] changeArray, int rank0, int rank1)
+        {
+            int s_rank0 = changeArray.GetLength(0);
+            int s_rank1 = changeArray.GetLength(1);
+            int[,] array2 = new int[rank0, rank1];
+            Array.Copy(changeArray, array2, s_rank0 * s_rank1);
+            changeArray = array2;
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            info_show();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
             Button[] btnArray = new Button[25];
             int k = 0;
             for (int y = 0; y < 5; y++)
@@ -190,25 +207,15 @@ namespace 賓果單機多人
                     btnArray[k].Visible = true;
                     for (int i = 0; i < 25; i++)
                     {
-                        btnArray[k].Text = $"{data.input[listBox1.SelectedIndex,i]}";
+                        btnArray[k].Text = $"{data.input[listBox1.SelectedIndex, i]}";
+                        if (data.fillblack[k]) { 
+                            btnArray[k].ForeColor = Color.Black; 
+                        }
                     }
                     this.Controls.Add(btnArray[k]);
                     k++;
                 }
             }
-        }
-
-        private void myResize1(ref int[,] changeArray, int rank0, int rank1)
-        {
-            int s_rank0 = changeArray.GetLength(0);
-            int s_rank1 = changeArray.GetLength(1);
-            int[,] array2 = new int[rank0, rank1];
-            Array.Copy(changeArray, array2, s_rank0 * s_rank1);
-            changeArray = array2;
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            info_show();
         }
     }
 }
