@@ -20,12 +20,10 @@ namespace 賓果單機多人
             label2.Text = id.ToString();
             makebtn();//生成按鈕0-49
             label2.Visible = false;
-
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
         }
         public class temp
         {
@@ -75,28 +73,28 @@ namespace 賓果單機多人
         private void button_Click(object sender, EventArgs e)//0-49號按鈕被案下
         {
             //((button)(sender)) = button陣列裡被按下的按鈕編號
-            if (temp.playing == false) { input(Convert.ToInt32(((Button)sender).Name) + 1); }//填格子
+            if (temp.playing == false) {
+                int btn = Convert.ToInt32(((Button)sender).Name) + 1;
+                temp.id = Convert.ToInt32(label2.Text);
+                if (btn < 26) { temp.leftbtn = btn; }//右邊按鈕從1開始，左邊從25
+                if (temp.leftbtn == 0) { label1.Text = "選取:無"; }
+                else label1.Text = "選取:" + $"{temp.leftbtn}";
+                if (btn > 25 && temp.leftbtn > 0)//回傳直到form2input資料陣列
+                {
+                    btnArray[btn - 1].Text = temp.leftbtn.ToString();
+                    btnArray[temp.leftbtn - 1].Visible = false;
+                    Form2.data.input[temp.id, btn - 25] = temp.leftbtn;//第2格開始填入資料
+                    temp.leftbtn = 0; label1.Text = "選取:無";//選取顯示
+                    btnArray[btn - 1].Enabled = false;
+                    how_many_input++;//計算輸入資料幾筆
+                    if (how_many_input >= 25) { Form2.data.whoReady[temp.id] = true; button2.Enabled = true; }//如果輸入25筆資料(填入完成)，增加whoready人數
+                }
+            }//填格子
             if (temp.playing == true) { play(Convert.ToInt32(((Button)sender).Name) + 1); }//開始遊戲
         }
         int how_many_input = 0;
-        private void input(int btn)//按鈕資料處理  按鈕從1開始
-        {
+        
 
-            temp.id = Convert.ToInt32(label2.Text);
-            if (btn < 26) { temp.leftbtn = btn; }//leftbtn 從1開始
-            if (temp.leftbtn == 0) { label1.Text = "選取:無"; }
-            else label1.Text = "選取:" + $"{temp.leftbtn}";
-            if (btn > 25 && temp.leftbtn > 0)//回傳直到form2input資料陣列
-            {
-                btnArray[btn - 1].Text = temp.leftbtn.ToString();
-                btnArray[temp.leftbtn - 1].Visible = false;
-                Form2.data.input[temp.id, btn - 25] = temp.leftbtn;//第2格開始填入資料
-                temp.leftbtn = 0; label1.Text = "選取:無";//選取顯示
-                btnArray[btn - 1].Enabled = false;
-                how_many_input++;//計算輸入資料幾筆
-                if (how_many_input >= 25) { Form2.data.whoReady[temp.id] = true; button2.Enabled = true; }//如果輸入25筆資料(填入完成)，增加whoready人數
-            }
-        }
         public void play(int btn)//btn從26開始
         {
             this.Visible = false;
