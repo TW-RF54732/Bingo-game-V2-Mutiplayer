@@ -27,7 +27,7 @@ namespace 賓果單機多人
         public static class data
         {
             public static int player_amount = 0;//從1開始//遊玩人數
-            public static int[,] input = new int[0,27];//[玩家, 該玩家資料(0:玩家id, 1:賓果數量)]//個玩家賓果表格存放資料容器
+            public static int[,] input;
             public static bool[] whoReady = new bool[0];
             public static bool[] fillblack = new bool[26];//從0開始//紀錄被填黑的數字
         }
@@ -40,7 +40,8 @@ namespace 賓果單機多人
             InitializeComponent();
             this.Show();
             data.player_amount = playerCount;//儲存form1人數到class的data 
-            myResize1(ref data.input, data.player_amount, 26);//二維陣列高度=玩家數量，寬度=26(25個數字+1玩家號碼)
+            data.input = new int[data.player_amount, 27];
+            //myResize1(ref data.input, data.player_amount, 26);//二維陣列高度=玩家數量，寬度=26(25個數字+1玩家號碼)
             Array.Resize(ref data.whoReady, data.player_amount);
             info_creat();//生成動態物件 例:label !!!內有宣告新增實體
                          //勿重複執行，且優先執行於info系列動作
@@ -84,7 +85,7 @@ namespace 賓果單機多人
                 playerform[i] = new 玩家介面(i);
                 playerform[i].Text = $"玩家 {i + 1}"; // 設定每個 Form 的標題
                 info_show();
-                playerform[i].ShowDialog();
+                playerform[i].ShowDialog(this);
                 if(i + 2 <= data.player_amount)MessageBox.Show($"輪到玩家{i + 2}\n 關閉此通知打開下一個遊戲視窗");
             }
             bool allReady = false;
