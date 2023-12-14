@@ -28,7 +28,7 @@ namespace 賓果單機多人
         {
             public static int player_amount = 0;//從1開始//遊玩人數
             public static int[,] input;
-            public static bool[] whoReady = new bool[0];
+            public static bool[] whoReady;
             public static bool[] fillblack = new bool[26];//從0開始//紀錄被填黑的數字
         }
         public Form2(int playerCount)//接收form1人數//主要程式
@@ -41,8 +41,7 @@ namespace 賓果單機多人
             this.Show();
             data.player_amount = playerCount;//儲存form1人數到class的data 
             data.input = new int[data.player_amount, 27];
-            //myResize1(ref data.input, data.player_amount, 26);//二維陣列高度=玩家數量，寬度=26(25個數字+1玩家號碼)
-            Array.Resize(ref data.whoReady, data.player_amount);
+            data.whoReady = new bool[data.player_amount];
             info_creat();//生成動態物件 例:label !!!內有宣告新增實體
                          //勿重複執行，且優先執行於info系列動作
             playerform_creat();//生成遊戲介面(隱形) + 輸入模式
@@ -177,15 +176,6 @@ namespace 賓果單機多人
             {                
                 if (data.fillblack[i] == true) { label11.Text += (i).ToString() + ","; }
             }
-        }
-
-        private void myResize1(ref int[,] changeArray, int rank0, int rank1)
-        {
-            int s_rank0 = changeArray.GetLength(0);
-            int s_rank1 = changeArray.GetLength(1);
-            int[,] array2 = new int[rank0, rank1];
-            Array.Copy(changeArray, array2, s_rank0 * s_rank1);
-            changeArray = array2;
         }
         private void button2_Click(object sender, EventArgs e)
         {
