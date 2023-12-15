@@ -38,17 +38,16 @@ namespace 賓果單機多人
              更直觀的了解整個流程不需被內部瑣碎程式干擾
              */
             InitializeComponent();
-            this.Show();
-            data.player_amount = playerCount;//儲存form1人數到class的data 
-            data.input = new int[data.player_amount, 27];
-            data.whoReady = new bool[data.player_amount];
+            this.Show();//顯示資料庫介面
+            data.player_amount = playerCount;//儲存人數到名為data(數據)的類別之player_amount(玩家總數)的靜態成員 
+            data.input = new int[data.player_amount, 27];//在知道玩家總數後創建每個玩家的數字處存陣列
+            data.whoReady = new bool[data.player_amount];//用於確認玩家是否完成填入數字
             info_creat();//生成動態物件 例:label !!!內有宣告新增實體
                          //勿重複執行，且優先執行於info系列動作
             playerform_creat();//生成遊戲介面(隱形) + 輸入模式
-                               //!!!內有宣告新增實體，勿重複執行，且優先執行於playerform系列動作
             MessageBox.Show("填完格子後可以準備開始遊戲，由玩家1先選擇你要填黑的格子");
             玩家介面.temp.playing = true;//告訴玩家介面遊戲開始
-            startPlay();
+            startPlay();//開始遊玩
 
 
             info_show();//呼叫顯示模組
@@ -147,7 +146,7 @@ namespace 賓果單機多人
             label2.Text = $"{data.player_amount}";//人數
             label3.Text = Convert.ToString(data.input.GetUpperBound(0) + 1);//顯示長
             label6.Text = Convert.ToString(data.input.GetUpperBound(1) + 1);//顯示高
-            for (int i = 0; i < labelArray.Length; i++)//生成label
+            for (int i = 0; i < labelArray.Length; i++)//label顏色
             {
                 labelArray[i].ForeColor = data.whoReady[i] == true ? Color.LimeGreen : Color.Red;
 
